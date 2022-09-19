@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>Từ Điển</p>
+
+<input type="text" id="input" placeholder="Nhập từ cần tra cứu">
+<button type="button" onclick="check()">Tra cứu</button> <br> <br>
+Result: <span id="result"></span>
+<script>
+  let english = ["Apple","Banana", "Orange"];
+  let vietnamese = ["Táo","Chuối","Cam"];
+
+  let index_eng = 0;
+
+  function check() {
+    let keyWord = document.getElementById("input").value;
+    let result = "";
+    for (let i = 0; i < english.length; i++) {
+      if (keyWord === english[i]){
+        result = vietnamese[i];
+        break;
+      } else {
+
+        result = "Không tìm thấy";
+      }
+    }
+
+    document.getElementById("result").innerHTML = result;
+  }
+
+</script>
+</body>
+</html>
